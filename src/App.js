@@ -19,13 +19,24 @@ function Board({ xIsNext, squares, onPlay }) {
     onPlay(nextSquares);
   }
 
+  function checkDraw(squares){
+    for(let i = 0; i < squares.length; i++){
+      if(!squares[i]){
+        return false; 
+      }
+    }
+    return true; 
+  }
+
   const winner = calculateWinner(squares)
 
   let status;
 
   if(winner){
     status = 'Winner: ' + winner; 
-  } else {
+  } else if (checkDraw(squares)) {
+    status = 'Draw Game!';
+  }else {
     status = 'Next Player: ' + (xIsNext ? 'X' : 'O');
   }
 
@@ -124,7 +135,7 @@ function calculateWinner(squares) {
     const [a, b, c] = lines[i];
 
     if (squares[a] && squares[a] === squares[b] && squares[a] === squares[c]) {
-
+        
       return squares[a];
 
     }
