@@ -81,8 +81,8 @@ export default function Game() {
     }
 
     return (
-        <li key = {move} >
-          <button onClick={() => jumpTo(move)}>{desc}</button>
+        <li id = 'orderedLi' key = {move} >
+          <button className = 'descText' onClick={() => jumpTo(move)}>{desc}</button>
         </li>
     );
 
