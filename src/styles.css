@@ -115,3 +115,14 @@ body {
 #orderedLi{
   list-style-type: none;
 }
+
+.currentBtn{
+  background-color: #1a95ae;
+  border-radius: 5px;
+  color: white;
+  padding: 10px 20px;
+  margin-bottom: 10px;
+  text-shadow: 3px 3px 3px rgba(0, 0, 0, .6);
+  font-size: 3vh;
+  box-shadow: 0 0 8px yellow;
+}

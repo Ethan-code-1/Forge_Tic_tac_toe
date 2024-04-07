@@ -91,9 +91,11 @@ export default function Game() {
       desc = 'Go to game start'; 
     }
 
+    const classNameForBtn = (move === currentMove) ? 'currentBtn' : 'descText'
+
     return (
         <li id = 'orderedLi' key = {move} >
-          <button className = 'descText' onClick={() => jumpTo(move)}>{desc}</button>
+          <button className = {classNameForBtn} onClick={() => jumpTo(move)}>{desc}</button>
         </li>
     );
 
